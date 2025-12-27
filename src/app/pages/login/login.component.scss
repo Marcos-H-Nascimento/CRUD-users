@@ -1,0 +1,76 @@
+.area-login-background{
+    width:55%;
+    display: block;
+    height: 100%;
+    float: left;
+    background-image: url(../../../assets/background-login.png);
+    background-color: var(--primary-color);
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.area-form{
+    height: 100%;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    background-color:#fff ;
+    display:flex;
+    float:right;
+    flex-wrap: nowrap;
+}
+
+.title{
+    text-align: center;
+    padding:0px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 900;
+    letter-spacing: 10px;
+    font-size: 30px;
+}
+
+.subtitle{
+    font-size: 16px;
+    font-weight:lighter;
+    margin:0px 0px 30px 0px;
+    padding:0px;
+    color: var(--gray-color);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form{
+    width: 100%;
+    border-radius: 4px;
+    border:1px solid #00000000;
+    padding:8px 10px;
+    margin-bottom:32px;
+    transition: linear all .2s;
+    box-shadow: inset 0px 0px 2px #000045;
+    &:focus{
+        border: 1px solid var(--primary-color);
+    }
+}
+
+.footer{
+    position: absolute;
+    bottom:4px;
+    font-size: 10px
+
+}
+
+// media
+
+@media only screen and (max-width: 768px) {
+    .area-form {
+        width: 100%;
+    }
+}

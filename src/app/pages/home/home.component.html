@@ -1,0 +1,127 @@
+<app-menu></app-menu>
+
+<div class="container-fluid pt-3">
+  <div class="row">
+
+    <!-- ================= LADO ESQUERDO ================= -->
+    <div class="col-12 col-lg-9">
+
+      <!-- TOPO -->
+      <div class="card-info">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-8">
+            <h1 class="title">Crud Users</h1>
+
+            <h3 class="subtitle">
+              Mais eficiência na gestão dos <span>usuários</span> e de seus benefícios.
+              Chega de sistemas antigos e sem usabilidade,
+              agora com o <span>Crud Users</span> seu trabalho fica até 3x mais rápido e simplificado.
+              <br>
+              Confira um resumo das informações em nosso <span>Dashboard</span>
+            </h3>
+
+            <app-button textButton="Iniciar" routerLink="/crud"></app-button>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <img src="../../../assets/dashboard.png" width="100%">
+          </div>
+        </div>
+      </div>
+
+      <!-- CARDS -->
+      <div class="row mt-4">
+
+        <div class="col-12 col-md-6">
+          <div class="card-info">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <p class="text-card">Total de usuários cadastrados no sistema</p>
+                <p class="number-card">79</p>
+                <p>+ 5 adicionados no último mês</p>
+              </div>
+
+              <div class="col-4 text-center">
+                <mat-progress-spinner
+                  class="example-margin mx-auto color-spinner"
+                  mode="determinate"
+                  value="79">
+                </mat-progress-spinner>
+                <p class="info-spinner">79/150</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="card-info">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <p class="text-card">Total de benefícios cadastrados no sistema</p>
+                <p class="number-card">4</p>
+                <p>+ 2 adicionados no último mês</p>
+              </div>
+
+              <div class="col-4 text-center">
+                <mat-progress-spinner
+                  class="example-margin mx-auto color-spinner"
+                  mode="determinate"
+                  value="80">
+                </mat-progress-spinner>
+                <p class="info-spinner">4/6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ÚLTIMO USUÁRIO -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card-info">
+            <h3 class="title">Último usuário cadastrado</h3>
+            <hr class="hr">
+
+            <div class="row align-items-center">
+              <div class="col-1"><mat-icon>account_circle</mat-icon></div>
+              <div class="col-1"><p class="text-p">1</p></div>
+              <div class="col"><p class="text-p">João Sena</p></div>
+              <div class="col"><p class="text-p">Desenvolvedor Front-End Sênior</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<!-- ===================== LADO DIREITO ===================== -->
+        <!-- USUARIO ATUAL -->
+    <div class="col-12 col-lg-3">
+      <div class="card-info">
+        <div class="container-perfil text-center">
+          <img src="../../../assets/Perfil.jpg" class="img-perfil" width="90px">
+          <h4>Seja Bem Vindo</h4>
+          <h5>{{userName}}</h5>
+          <p>
+            <mat-icon>location_on</mat-icon>
+            GO - Brasil
+          </p>
+        </div>
+        <hr class="hr">
+        <p class="text-p">"A sociedade é feita da sociedade e quando a sociedade vai fazer a sociedade ela gera um problema maior
+            que é a sociedade, quando a sociedade mexe com os conceitos da sociedade a sociedade fica mais sociavel - Karl Marx"
+        </p>
+        <hr class="hr">
+
+            <li> <mat-icon>person</mat-icon>Gerencie Usuarios</li>
+            <hr class="hr">
+            <li> <mat-icon>loyalty</mat-icon>Adicione Beneficiso</li>
+            <hr class="hr">
+            <li> <mat-icon>format_list_bulleted</mat-icon>Consulte Cadastros</li>
+            <hr class="hr">
+            <li> <mat-icon>delete</mat-icon>Exclua Usuarios</li>
+        </div>
+    </div>
+
+  </div>
+</div>

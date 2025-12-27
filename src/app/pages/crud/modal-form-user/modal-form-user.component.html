@@ -1,0 +1,20 @@
+<div class="container-fluid p-3">
+    <mat-icon class="float-end hover" (click)="closeModal()">close</mat-icon>
+
+    <h1 class="title">Formulário de Usuario</h1>
+    <h2 class="subtitle">Tenha uma visão mais detalhada deste usuário</h2>
+
+    <form class="row" [formGroup]="formUser">
+        <div class="col-12 col-md-6 mb-2">
+             <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                    <input type="text" matInput [formControl]="name"r"
+                   placeholder="Digite seu Nome">
+                    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                    <mat-error>Por favor digite um e-mail valido</mat-error>
+                    }
+            </mat-form-field>
+        </div>
+    </form>
+
+</div>
