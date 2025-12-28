@@ -64,7 +64,6 @@ constructor(private usersService: UsersService,
   this.dataSource = new MatTableDataSource<any>(this.listusers);
 }
 
-
   ngOnInit(){
     this.getListUsers();
   }
@@ -73,7 +72,7 @@ constructor(private usersService: UsersService,
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
+// user function
   getListUsers(){
     this.usersService.getAllUsers().subscribe({
       next: (response: any) => {
@@ -93,6 +92,14 @@ constructor(private usersService: UsersService,
     });
   }
  
+  deleteUser(firebaseId: string){
+    this.usersService.deleteUser(firebaseId).then(
+      (Response:any) => {
+        window.alert('Usuario deletado com sucesso')
+      }
+    )
+  }
+
     applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -111,10 +118,20 @@ constructor(private usersService: UsersService,
       data: user
     })
   }
+
+
   openModalAddUser(){
     this.dialog.open(ModalFormUserComponent, { 
       width: '700px',
-      height: '400px'
+      height: '450px'
+    }).afterClosed().subscribe(() => this.getListUsers() );
+  }
+
+  openModalEditUser(user: User){
+      this.dialog.open(ModalFormUserComponent, { 
+      width: '700px',
+      height: '450px',
+      data: user
     }).afterClosed().subscribe(() => this.getListUsers() );
   }
 
