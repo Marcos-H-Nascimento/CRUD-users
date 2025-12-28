@@ -1,20 +1,84 @@
-<div class="container-fluid p-3">
+<div class="container-fluid p-3 manual-row">
     <mat-icon class="float-end hover" (click)="closeModal()">close</mat-icon>
 
     <h1 class="title">Formulário de Usuario</h1>
     <h2 class="subtitle">Tenha uma visão mais detalhada deste usuário</h2>
 
     <form class="row" [formGroup]="formUser">
+        <!-- Name -->
         <div class="col-12 col-md-6 mb-2">
-             <mat-form-field class="example-full-width">
-                <mat-label>Email</mat-label>
-                    <input type="text" matInput [formControl]="name"r"
-                   placeholder="Digite seu Nome">
-                    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+             <mat-form-field class="example-full-width w-100">
+                <mat-label>Nome</mat-label>
+                    <input type="text" matInput formControlName="name"
+                   placeholder="Digite o nome">
+                    @if (formUser?.get('name')?.invalid && formUser?.get('name')?.touched) {
+                    <mat-error>Por favor digite um nome valido</mat-error>
+                    }
+            </mat-form-field>
+        </div>
+        <!-- E-mail -->
+        <div class="col-12 col-md-6 mb-2">
+             <mat-form-field class="example-full-width w-100">
+                <mat-label>E-mail</mat-label>
+                    <input type="text" matInput formControlName="email"
+                   placeholder="Digite o e-mail">
+                    @if (formUser?.get('email')?.invalid && formUser?.get('email')?.touched) {
                     <mat-error>Por favor digite um e-mail valido</mat-error>
                     }
             </mat-form-field>
         </div>
+        <!-- Setor -->
+        <div class="col-12 col-md-6 mb-2">
+             <mat-form-field class="example-full-width w-100">
+                <mat-label>Setor</mat-label>
+                    <input type="text" matInput formControlName="sector"
+                   placeholder="Digite o setor">
+                    @if (formUser?.get('sector')?.invalid && formUser?.get('sector')?.touched) {
+                    <mat-error>Por favor digite um setor valido</mat-error>
+                    }
+            </mat-form-field>
+        </div>
+        <!-- Cargo -->
+        <div class="col-12 col-md-6 mb-2">
+             <mat-form-field class="example-full-width w-100">
+                <mat-label>Cargo</mat-label>
+                    <input type="text" matInput formControlName="role"
+                   placeholder="Digite seu Cargo">
+                    @if (formUser?.get('role')?.invalid && formUser?.get('role')?.touched) {
+                    <mat-error>Por favor digite um cargo valido</mat-error>
+                    }
+            </mat-form-field>
+        </div>
+
+        <!-- Beneficios - Select -->
+
+        <div class="col-12 col-md-6 mb-2">
+        <mat-form-field class="w-100">
+            <mat-label><mat-icon>favorite</mat-icon> Plano de saúde</mat-label>
+            <mat-select formControlName="healthPlan">
+              @for (plano of planosSaude; track plano) {
+        <mat-option [value]="plano.descricao">{{plano.descricao}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+        </div>
+
+             <div class="col-12 col-md-6 mb-2">
+        <mat-form-field class="w-100">
+            <mat-label><mat-icon>favorite</mat-icon> Plano de Odontologico</mat-label>
+            <mat-select formControlName="dentalPlan">
+              @for (plano of planosOdonto; track plano) {
+        <mat-option [value]="plano.descricao">{{plano.descricao}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+        </div>
+
+        <div class="col-12">
+            <button class="botao-primario float-end" [disabled]="!formUser.valid" (click)="saveUser()">Salvar Usuario</button>
+        </div>
+
     </form>
+    
 
 </div>

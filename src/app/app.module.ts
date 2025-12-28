@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Angular Material
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -23,7 +23,7 @@ import { ComponentsModule } from './components/components.module';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ModalViewUserComponent } from './pages/crud/modal-view-user/modal-view-user.component';
 import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-user.component';
-
+import {MatSelectModule} from '@angular/material/select';
 // quando for mudar o CrudComponent, não esqueça de colocar ele no imports, ele é um component standalone
 // plmds, n esquece q essa merda é standalone eu sinceramente cogitei em atentados contra a minha própria vida arrumando esse codigo
 
@@ -52,7 +52,9 @@ import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-
     // angular material
     MatSortModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [
   ],
